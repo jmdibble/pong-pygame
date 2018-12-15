@@ -1,2 +1,2 @@
 # pong-pygame
-Small endeavour into Pygame trying to recreate Pong.
+Small endeavour into Pygame trying to recreate Pong
