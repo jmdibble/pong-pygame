@@ -6,14 +6,14 @@ class Pong(object):
         self.screensize = screensize
         self.centerx = int(screensize[0]*0.5)
         self.centery = int(screensize[1]*0.5)
-        self.radius = 8
+        self.radius = 9
         self.rect = pygame.Rect(self.centerx-self.radius,
                                 self.centery-self.radius,
                                 self.radius*2, self.radius*2)
         self.color = (100,100,255)
         self.direction = [1,1]
-        self.speedx = 2
-        self.speedy = 2
+        self.speedx = 3.5
+        self.speedy = 3.5
         ## Task: change speed/radius as game progresses to make it harder
 
         self.hit_edge_left = False
@@ -51,7 +51,7 @@ class AIPaddle(object):
     def __init__(self, screensize):
         self.screensize = screensize
 
-        self.centerx = 5
+        self.centerx = 10
         self.centery = int(screensize[1]*0.5)
 
         self.height = 100
@@ -63,7 +63,7 @@ class AIPaddle(object):
 
         ## Task: Adjust size of AI paddle as match progresses to make it more difficult
 
-        self.speed = 3
+        self.speed = 10
 
     def update(self, pong):
         if pong.rect.top < self.rect.top:
@@ -85,7 +85,7 @@ class PlayerPaddle(object):
     def __init__(self, screensize):
         self.screensize = screensize
 
-        self.centerx = screensize[0] - 5
+        self.centerx = screensize[0] - 10
         self.centery = int(screensize[1]*0.5)
 
         self.height = 100
@@ -112,9 +112,9 @@ class PlayerPaddle(object):
 def main():
     pygame.init()
 
-    screensize = (1040,480)
+    screensize = (740,480)
 
-    screen = pygame.display.set_mode((1040,480))
+    screen = pygame.display.set_mode((740,480))
     clock = pygame.time.Clock()
     pong = Pong(screensize)
     ai_paddle = AIPaddle(screensize)
